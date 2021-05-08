@@ -4,6 +4,9 @@
 # Virtual environment
 .venv
 
+# Dev database
+db.sqlite3
+
 # Environment files
 .env
 .env.db

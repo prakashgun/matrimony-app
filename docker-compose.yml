@@ -1,6 +1,12 @@
 version: "3.7"
 
 services:
+  db:
+    image: postgres:12.3-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - .env.db
   django_gunicorn:
     build:
       context: .
@@ -10,7 +16,9 @@ services:
       - .env
     volumes:
     - static:/static
-
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
   nginx:
     build:
       context: ./nginx
@@ -23,3 +31,4 @@ services:
 
 volumes:
   static:
+  postgres_data:

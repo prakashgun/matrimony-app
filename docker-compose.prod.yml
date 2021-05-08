@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  web:
+    command: gunicorn app.wsgi:application --bind 0.0.0.0:8000
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: ../nginx/Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - static:/static
+    depends_on:
+      - web
