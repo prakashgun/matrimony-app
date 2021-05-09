@@ -10,3 +10,6 @@ db.sqlite3
 # Environment files
 .env
 .env.db
+
+# Cache
+__pycache__

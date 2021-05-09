@@ -7,7 +7,7 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
       - .env.db
-  django_gunicorn:
+  django_rest:
     build:
       context: .
     ports:
@@ -27,7 +27,7 @@ services:
     volumes:
     - static:/static
     depends_on:
-      - django_gunicorn
+      - django_rest
 
 volumes:
   static:

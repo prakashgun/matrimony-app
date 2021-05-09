@@ -5,9 +5,6 @@ ENV PYTHONUNBUFFERED 1
 # Install psycopg2 dependencies
 RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
 
-# Install other dependencies
-#RUN apk add rust cargo libffi-dev openssl-dev
-
 RUN pip install --upgrade pip
 
 COPY ./requirements.txt .

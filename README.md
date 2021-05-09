@@ -21,8 +21,8 @@ Docker environment setup
 
 Migrations and test (New tab)
 ------------------------------
-`docker-compose run django_gunicorn python manage.py makemigrations`
+`docker-compose run django_rest python manage.py makemigrations`
 
-`docker-compose run django_gunicorn python manage.py migrate`
+`docker-compose run django_rest python manage.py migrate`
 
-`docker-compose run django_gunicorn python manage.py test`
+`docker-compose run django_rest python manage.py test`
